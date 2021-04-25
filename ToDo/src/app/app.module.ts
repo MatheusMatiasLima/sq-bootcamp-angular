@@ -17,6 +17,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { MaterialModule } from './material.module';
 import { CoreModule } from './core';
+import { AgendaTaskDataComponent } from './agenda-task-data/agenda-task-data.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CoreModule } from './core';
     AgendaTaskComponent,
     DialogAddTaskComponent,
     TasksComponent,
+    AgendaTaskDataComponent,
   ],
   imports: [
     BrowserModule,
