@@ -1,0 +1,56 @@
+<mat-dialog-content class="mat-typography">
+  <div class="row">
+    <div class="col-sm-9 col-md-9">
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Eu preciso</mat-label>
+            <input matInput [(ngModel)]="title" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Notas</mat-label>
+              <textarea rows="5" matInput [(ngModel)]="notes"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-3 border-left">
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Me lembrar em</mat-label>
+            <input
+              matInput
+              [matDatepickerFilter]="myFilter"
+              [matDatepicker]="datepicker"
+              [(ngModel)]="remindMe"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="datepicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button
+    mat-button
+    color="primary"
+    [mat-dialog-close]="true"
+    (click)="addTask()"
+  >
+    Criar
+  </button>
+</mat-dialog-actions>

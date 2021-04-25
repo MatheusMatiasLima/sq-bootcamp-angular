@@ -1,0 +1,23 @@
+<ng-container *ngFor="let todo of todos">
+  <section class="task">
+    <div class="task-title">
+      <mat-checkbox
+        [(ngModel)]="todo.done"
+        #checkbox
+        (click)="done(checkbox.checked, todo)"
+        class="checkbox"
+      ></mat-checkbox>
+      <span [ngClass]="{ 'task-done': todo.done }">{{ todo.title }}</span>
+    </div>
+    <span class="example-spacer"></span>
+    <span class="align-middle task-actions">
+      <button
+        mat-icon-button
+        color="warn"
+        (click)="delete(todo.id || 0)"
+      >
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </span>
+  </section>
+</ng-container>
