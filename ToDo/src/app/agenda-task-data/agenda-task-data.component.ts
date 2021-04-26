@@ -15,11 +15,13 @@ export class AgendaTaskDataComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // tslint:disable-next-line:typedef
   done(done: boolean, task: Task) {
     task.done = done;
     this.taskService.alterTask(task.id, task).subscribe();
   }
 
+  // tslint:disable-next-line:typedef
   delete(taskId: number) {
     this.taskService.deleteTask(taskId).subscribe();
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services';
 import { Task } from '../services/models';
 
+
 @Component({
   selector: 'app-agenda',
   templateUrl: './agenda.component.html',
@@ -15,6 +16,7 @@ export class AgendaComponent implements OnInit {
 
   constructor(private taskService: TaskService) {}
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.taskService.onUpdateTasks().subscribe(() => {
       this.init();
@@ -23,6 +25,7 @@ export class AgendaComponent implements OnInit {
     this.init();
   }
 
+  // tslint:disable-next-line:typedef
   private init() {
     this.listAllTasks();
     this.listTasksForToday();
@@ -30,24 +33,28 @@ export class AgendaComponent implements OnInit {
     this.listUpcomingTasks();
   }
 
+  // tslint:disable-next-line:typedef
   listAllTasks() {
     this.taskService
       .listAllTask()
       .subscribe((response) => (this.todos = response));
   }
 
+  // tslint:disable-next-line:typedef
   listTasksForToday() {
     this.taskService
       .listTasksForToday()
       .subscribe((response) => (this.todosForToday = response));
   }
 
+  // tslint:disable-next-line:typedef
   listTasksForTomorrow() {
     this.taskService
       .listTasksForTomorrow()
       .subscribe((response) => (this.todosForTomorrow = response));
   }
 
+  // tslint:disable-next-line:typedef
   listUpcomingTasks() {
     this.taskService
       .listUpcomingTasks()
